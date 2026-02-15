@@ -14,7 +14,7 @@ cp .env.example .env.local
 ```
 3. Set a shared password in `.env.local`:
 ```bash
-SITE_PASSWORD=your-shared-password
+SITE_PASSWORD=
 ```
 4. Run the app:
 ```bash
