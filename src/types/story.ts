@@ -40,7 +40,6 @@ export type EasterEgg = {
 export type ProposalState = "idle" | "open" | "answered";
 export type CelebrationState = "off" | "active" | "completed";
 export type TypewriterState = "idle" | "running" | "done" | "skipped";
-export type UnlockState = "locked" | "unlocked";
 export type StoryFlowStep = "intro" | "act-i" | "act-ii" | "act-iii";
 export type SectionUnlockState = {
   actI: boolean;

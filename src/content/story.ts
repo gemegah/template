@@ -8,7 +8,6 @@ import type {
 export const storyMeta = {
   title: "Our Timeline -> My Lessons -> Our Future",
   acts: ["How We Started", "My Confession", "The Question"],
-  nextChapterPath: "/next-chapter",
   intro: {
     heading: "Hey babe...",
     subheading:
@@ -27,7 +26,7 @@ export const timelineItems: TimelineItem[] = [
       "April 17th, 2022 wasn’t loud or dramatic. But it was the day I met someone who would eventually hold a mirror to me. You came into my life gently — and somehow became the most important part of it.",
     media: {
       type: "image",
-      src: "/images/anime-style/2022-first-meet.png",
+      src: "/images/image0.png",
       alt: "Anime-style illustration of the day we met on April 17, 2022",
     },
   },
@@ -38,7 +37,7 @@ export const timelineItems: TimelineItem[] = [
       "We built something real. Laughter. Late talks. Comfort. You became my safe place before I even understood what that meant. Even when life pulled us in different directions, there was always an invisible thread tying us back together.",
     media: {
       type: "image",
-      src: "/images/anime-style/best-friends-era.png",
+      src: "/images/image1.png",
       alt: "Anime-style illustration representing our closeness and best friend era",
     },
   },
@@ -49,7 +48,7 @@ export const timelineItems: TimelineItem[] = [
       "This is the part I can’t soften. I cheated. More than once. Not because you lacked anything — but because I lacked maturity, discipline, and depth. I broke your trust. I disrespected what we had. And I hurt someone who only ever loved me sincerely.",
     media: {
       type: "image",
-      src: "/images/anime-style/broken-trust.png",
+      src: "/images/image2.png",
       alt: "Anime-style image symbolizing broken trust and emotional distance",
     },
   },
@@ -60,7 +59,7 @@ export const timelineItems: TimelineItem[] = [
       "I realized love isn’t just feelings — it’s responsibility. It’s discipline. It’s protection. I stopped making excuses. I confronted my ego. I chose honesty even when it made me uncomfortable. Not to impress you — but to become someone worthy of you.",
     media: {
       type: "image",
-      src: "/images/anime-style/rebuilding-trust.png",
+      src: "/images/image1.png",
       alt: "Anime-style illustration symbolizing growth, rebuilding trust, and emotional maturity",
     },
   },
@@ -71,7 +70,7 @@ export const timelineItems: TimelineItem[] = [
       "I’m not asking you to erase the past. I’m asking you to look at the man standing in front of you now. A man who understands that love must be guarded. A man who knows your heart is sacred. A man choosing you — not casually, not emotionally, but intentionally.",
     media: {
       type: "image",
-      src: "/images/anime-style/choosing-you.png",
+      src: "/images/image2.png",
       alt: "Anime-style illustration of us standing together stronger, healed, and aligned",
     },
   },

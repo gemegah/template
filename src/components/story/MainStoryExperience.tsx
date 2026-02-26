@@ -2,7 +2,6 @@
 
 import confetti from "canvas-confetti";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { Section } from "@/components/layout/Section";
 import { CtaButton } from "@/components/ui/CtaButton";
@@ -15,7 +14,7 @@ import {
   timelineItems,
 } from "@/content/story";
 import { trackEvent } from "@/lib/analytics";
-import type { CelebrationState, ProposalState, UnlockState } from "@/types/story";
+import type { CelebrationState, ProposalState } from "@/types/story";
 
 function useReducedMotionPreference() {
   const [reduced, setReduced] = useState(false);
@@ -38,7 +37,6 @@ export function MainStoryExperience() {
   const reducedMotion = useReducedMotionPreference();
   const [proposalState, setProposalState] = useState<ProposalState>("idle");
   const [celebrationState, setCelebrationState] = useState<CelebrationState>("off");
-  const [unlockState, setUnlockState] = useState<UnlockState>("locked");
   const [actIUnlocked, setActIUnlocked] = useState(false);
   const [actICompleted, setActICompleted] = useState(false);
   const [actIIUnlocked, setActIIUnlocked] = useState(false);
@@ -46,7 +44,6 @@ export function MainStoryExperience() {
   const [actIIIUnlocked, setActIIIUnlocked] = useState(false);
   const [typedCharacters, setTypedCharacters] = useState(0);
   const [tryAgainCount, setTryAgainCount] = useState(0);
-  const chapterUnlockDate = useMemo(() => new Date(2026, 1, 15, 0, 0, 0, 0), []);
 
   const confessionText = useMemo(
     () => confessionBlocks.map((block) => block.text).join("\n\n"),
@@ -66,19 +63,6 @@ export function MainStoryExperience() {
 
     return () => window.clearInterval(timer);
   }, [confessionText, reducedMotion]);
-
-  useEffect(() => {
-    if (Date.now() >= chapterUnlockDate.getTime()) {
-      setUnlockState("unlocked");
-      return;
-    }
-
-    const unlockTimer = window.setTimeout(() => {
-      setUnlockState("unlocked");
-    }, chapterUnlockDate.getTime() - Date.now());
-
-    return () => window.clearTimeout(unlockTimer);
-  }, [chapterUnlockDate]);
 
   const displayedConfession = reducedMotion
     ? confessionText
@@ -160,13 +144,14 @@ export function MainStoryExperience() {
         </p>
         <figure className="mb-6 w-full max-w-md overflow-hidden rounded-2xl border border-white/70 bg-[#fff6fa] p-2">
           <Image
-            src="/images/begin.png"
+            src="/images/image0.png"
             alt="Opening memory"
             width={900}
             height={560}
             className="h-auto w-full rounded-xl object-cover"
             priority
-            sizes="(min-width: 768px) 32rem, 95vw"
+            sizes="(min-width: 768px) 28rem, 92vw"
+            quality={75}
           />
         </figure>
         <h1 className="mb-4 text-2xl font-semibold sm:text-3xl md:text-5xl">
@@ -202,13 +187,14 @@ export function MainStoryExperience() {
                   <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
                   <p className="mb-4">{item.body}</p>
                   {item.media ? (
-                    <figure className="h-40 w-full overflow-hidden rounded-xl border border-white/70 bg-[#fff6fa]">
+                    <figure className="mx-auto h-40 w-full max-w-2xl overflow-hidden rounded-xl border border-white/70 bg-[#fff6fa]">
                       <Image
                         src={item.media.src}
                         alt={item.media.alt}
                         width={900}
                         height={360}
-                        sizes="(min-width: 768px) 40rem, 95vw"
+                        sizes="(min-width: 768px) 42rem, 92vw"
+                        quality={75}
                         className={`h-full w-full object-contain ${
                           item.media.sensitive ? "blur-[2px]" : ""
                         }`}
@@ -272,42 +258,10 @@ export function MainStoryExperience() {
 
                 {celebrationState !== "off" ? (
                   <div className="mt-5 rounded-xl border border-[#f0bfd4] bg-[#fff1f8] p-4">
-                    <p className="mt-2 text-xl" aria-hidden="true">
-
+                    <p className="text-lg font-semibold text-[#4b1f31]">I&apos;m so happy.</p>
+                    <p className="mt-2 text-sm text-[#6b5670]">
+                      Thank you for saying yes. I love you.
                     </p>
-                    {unlockState === "unlocked" ? (
-                      <>
-                        <p className="mt-3 text-sm text-[#6b5670]">
-                          Next chapter is now unlocked.
-                        </p>
-                        <Link
-                          href={storyMeta.nextChapterPath}
-                          onClick={() =>
-                            trackEvent({
-                              name: "next_chapter_opened",
-                              route: "/next-chapter",
-                              timestamp: new Date().toISOString(),
-                            })
-                          }
-                          className="mt-3 inline-flex min-h-11 min-w-11 w-full items-center justify-center rounded-full bg-[#7f3453] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4b1f31] sm:w-auto"
-                        >
-                          Continue to Next Chapter
-                        </Link>
-                      </>
-                    ) : (
-                      <>
-                        <p className="mt-3 text-sm text-[#6b5670]">
-                          Next chapter is locked and will be available on February 15, 2026.
-                        </p>
-                        <button
-                          type="button"
-                          disabled
-                          className="mt-3 inline-flex min-h-11 min-w-11 w-full cursor-not-allowed items-center justify-center rounded-full bg-[#b6adb3] px-5 text-sm font-semibold text-white opacity-80 sm:w-auto"
-                        >
-                          Continue to Next Chapter
-                        </button>
-                      </>
-                    )}
                   </div>
                 ) : null}
               </StoryCard>

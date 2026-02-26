@@ -20,6 +20,9 @@
 # production
 /build
 
+# local asset backups
+/public/images/_originals/
+
 # misc
 .DS_Store
 *.pem

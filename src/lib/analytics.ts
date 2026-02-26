@@ -3,10 +3,9 @@ export type AnalyticsEvent = {
     | "story_start"
     | "proposal_open"
     | "proposal_option_selected"
-    | "celebration_shown"
-    | "next_chapter_opened";
+    | "celebration_shown";
   timestamp: string;
-  route: "/" | "/next-chapter";
+  route: "/";
   optionId?: "yes" | "of-course" | "try-again";
 };
 
