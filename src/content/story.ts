@@ -6,48 +6,73 @@ import type {
 } from "@/types/story";
 
 export const storyMeta = {
-  title: "Our Timeline -> Our Choice -> Our Future",
+  title: "Our Timeline -> My Lessons -> Our Future",
   acts: ["How We Started", "My Confession", "The Question"],
   nextChapterPath: "/next-chapter",
   intro: {
     heading: "Hey babe...",
-    subheading: "Welcome to our little corner of the internet.",
+    subheading:
+      "This isn’t just an apology. It’s accountability. It’s growth. It’s me choosing you with intention.",
     ctaLabel: "Start Our Story",
   },
-  proposalPrompt: "Will you be my Valentine?",
+  proposalPrompt: "Will you be my girlfriend?",
   proposalOpenLabel: "Open",
 } as const;
 
 export const timelineItems: TimelineItem[] = [
   {
-    year: "2020",
-    title: "Where It Began",
-    body: "We met, and I had no idea you would become this important.",
-    media: {
-      type: "photo",
-      src: "/images/1st.png",
-      alt: "A warm memory from when we first met in 2020",
-    },
-  },
-  {
-    year: "2021-2024",
-    title: "Best Friends Era",
-    body: "Friends, best friends, and the occasional not-talking breaks.",
-    media: {
-      type: "screenshot",
-      src: "/images/2nd.png",
-      alt: "A chat screenshot that captures our playful friendship years",
-      sensitive: false,
-    },
-  },
-  {
-    year: "Late 2025",
-    title: "We Became Us",
-    body: "Somehow, somewhere between all the chaos, we became us.",
+    year: "17 April 2022",
+    title: "The Day My Life Shifted",
+    body:
+      "April 17th, 2022 wasn’t loud or dramatic. But it was the day I met someone who would eventually hold a mirror to me. You came into my life gently — and somehow became the most important part of it.",
     media: {
       type: "image",
-      src: "/images/chp2.png",
-      alt: "A meaningful image representing the shift into our relationship",
+      src: "/images/anime-style/2022-first-meet.png",
+      alt: "Anime-style illustration of the day we met on April 17, 2022",
+    },
+  },
+  {
+    year: "2022 - 2023",
+    title: "Safe With You",
+    body:
+      "We built something real. Laughter. Late talks. Comfort. You became my safe place before I even understood what that meant. Even when life pulled us in different directions, there was always an invisible thread tying us back together.",
+    media: {
+      type: "image",
+      src: "/images/anime-style/best-friends-era.png",
+      alt: "Anime-style illustration representing our closeness and best friend era",
+    },
+  },
+  {
+    year: "2023 - 2024",
+    title: "Where I Failed You",
+    body:
+      "This is the part I can’t soften. I cheated. More than once. Not because you lacked anything — but because I lacked maturity, discipline, and depth. I broke your trust. I disrespected what we had. And I hurt someone who only ever loved me sincerely.",
+    media: {
+      type: "image",
+      src: "/images/anime-style/broken-trust.png",
+      alt: "Anime-style image symbolizing broken trust and emotional distance",
+    },
+  },
+  {
+    year: "2024 - 2025",
+    title: "Doing The Work For Real",
+    body:
+      "I realized love isn’t just feelings — it’s responsibility. It’s discipline. It’s protection. I stopped making excuses. I confronted my ego. I chose honesty even when it made me uncomfortable. Not to impress you — but to become someone worthy of you.",
+    media: {
+      type: "image",
+      src: "/images/anime-style/rebuilding-trust.png",
+      alt: "Anime-style illustration symbolizing growth, rebuilding trust, and emotional maturity",
+    },
+  },
+  {
+    year: "Now",
+    title: "Choosing You Intentionally",
+    body:
+      "I’m not asking you to erase the past. I’m asking you to look at the man standing in front of you now. A man who understands that love must be guarded. A man who knows your heart is sacred. A man choosing you — not casually, not emotionally, but intentionally.",
+    media: {
+      type: "image",
+      src: "/images/anime-style/choosing-you.png",
+      alt: "Anime-style illustration of us standing together stronger, healed, and aligned",
     },
   },
 ];
@@ -55,19 +80,28 @@ export const timelineItems: TimelineItem[] = [
 export const confessionBlocks: ConfessionBlock[] = [
   {
     order: 1,
-    text: "I know I am not perfect. I can be annoying, slow to act, and sometimes a full-time doofus.",
+    text:
+      "I need to say this without hiding behind excuses: I cheated in 2023–2024. I hurt you. I broke your trust. And that is fully on me.",
   },
   {
     order: 2,
-    text: "I have fumbled moments and hesitated when I should have been certain.",
+    text:
+      "You didn’t deserve confusion. You didn’t deserve insecurity. You didn’t deserve to question your worth because of my choices.",
   },
   {
     order: 3,
-    text: "But loving you, caring about you, and choosing you have always been clear.",
+    text:
+      "I’ve learned that trust isn’t rebuilt through promises — it’s rebuilt through patterns. Through consistency. Through quiet integrity when no one is watching.",
   },
   {
     order: 4,
-    text: "And even when I don’t get everything right… my heart has always known where it belongs..",
+    text:
+      "I’m still growing. But I’m no longer running from growth. I’m becoming a man who protects what he loves instead of risking it.",
+  },
+  {
+    order: 5,
+    text:
+      "So when I ask you to be mine, it’s not from emotion alone. It’s from intention. From accountability. From a place of readiness.",
   },
 ];
 
@@ -85,9 +119,9 @@ export const easterEggs: EasterEgg[] = [
     responseType: "message",
     payload: {
       messages: [
-        "That day you laughed at my joke...",
-        "Our first serious talk...",
-        "When I knew it was you...",
+        "The moment I realized you weren’t replaceable wasn’t loud — it was quiet and terrifying.",
+        "That conversation where I saw the hurt in your eyes changed me.",
+        "The day I understood love means responsibility — not just emotion.",
       ],
     },
   },
@@ -98,7 +132,8 @@ export const easterEggs: EasterEgg[] = [
     responseType: "overlay",
     payload: {
       title: "Secret Love Note",
-      note: "If you typed your name, you already know you are my favorite person.",
+      note:
+        "If you typed your name, it means you’re still here. And I don’t take that lightly. Staying after being hurt takes strength. I see it. I respect it. I cherish it.",
     },
   },
   {
@@ -108,9 +143,9 @@ export const easterEggs: EasterEgg[] = [
     responseType: "note",
     payload: {
       notes: [
-        "That day you laughed at my joke...",
-        "Our first serious talk...",
-        "When I knew it was you...",
+        "The night we talked until everything felt honest again…",
+        "When you laughed and I realized peace feels like you…",
+        "The moment I knew I couldn’t keep being careless with something this real…",
       ],
     },
   },
@@ -120,7 +155,8 @@ export const easterEggs: EasterEgg[] = [
     triggerValue: "apology-button",
     responseType: "audio",
     payload: {
-      text: "I am sorry for being silly sometimes. Please forgive your favorite idiot.",
+      text:
+        "I’m sorry for what I did in 2023–2024. I’m sorry for the insecurity I caused. I’m sorry for making you feel unsafe in something that was supposed to protect you. I’m committed to being better — consistently, not occasionally.",
       audioSrc: "/audio/doofus-apology.mp3",
     },
   },
