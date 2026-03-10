@@ -26,7 +26,7 @@ export const timelineItems: TimelineItem[] = [
       "April 17th, 2022 wasn’t loud or dramatic. But it was the day I met someone who would eventually hold a mirror to me. You came into my life gently — and somehow became the most important part of it.",
     media: {
       type: "image",
-      src: "/images/image0.png",
+      src: "/images/u/first.jpeg",
       alt: "Anime-style illustration of the day we met on April 17, 2022",
     },
   },
@@ -37,7 +37,7 @@ export const timelineItems: TimelineItem[] = [
       "We built something real. Laughter. Late talks. Comfort. You became my safe place before I even understood what that meant. Even when life pulled us in different directions, there was always an invisible thread tying us back together.",
     media: {
       type: "image",
-      src: "/images/image1.png",
+      src: "/images/u/second.jpeg",
       alt: "Anime-style illustration representing our closeness and best friend era",
     },
   },
@@ -48,7 +48,7 @@ export const timelineItems: TimelineItem[] = [
       "This is the part I can’t soften. I cheated. More than once. Not because you lacked anything — but because I lacked maturity, discipline, and depth. I broke your trust. I disrespected what we had. And I hurt someone who only ever loved me sincerely.",
     media: {
       type: "image",
-      src: "/images/image2.png",
+      src: "/images/u/third.png",
       alt: "Anime-style image symbolizing broken trust and emotional distance",
     },
   },
